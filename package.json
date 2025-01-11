@@ -1,6 +1,6 @@
 {
   "name": "vitify",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "type": "module",
   "description": "CLI tool for scaffolding React-Vite projects with optional packages (TailwindCSS, Zustand, Lucide-react, GSAP/Framer Motion)",
   "main": "index.js",

@@ -158,6 +158,30 @@ import path from "path";
 			process.exit(1);
 		}
 
+		// Install dependencies
+		console.log(
+			chalk.green(
+				"\nInstalling dependencies..."
+			)
+		);
+		try {
+			execSync("npm install", {
+				stdio: "inherit",
+			});
+			console.log(
+				chalk.green(
+					"\nDependencies installed successfully."
+				)
+			);
+		} catch (error) {
+			console.log(
+				chalk.red(
+					"\nError installing dependencies. Exiting...\n"
+				)
+			);
+			process.exit(1);
+		}
+
 		// Install TailwindCSS
 		if (responses.tailwind) {
 			console.log(
@@ -170,25 +194,19 @@ import path from "path";
 					"npm install -D tailwindcss postcss autoprefixer && npx tailwindcss init",
 					{ stdio: "inherit" }
 				);
-				
-				// Tailwind CSS getComputedStyle
-				fs.writeFileSync("src/index.css", "@tailwind base; \n @tailwind components; \n @tailwind utilities;")
 
-				// Tailwind configuration files
+				// Tailwind CSS configuration files
+				fs.writeFileSync(
+					"src/index.css",
+					"@tailwind base; \n @tailwind components; \n @tailwind utilities;"
+				);
 				fs.writeFileSync(
 					"tailwind.config.js",
-					`module.exports = {
-            content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-            theme: { extend: {} },
-            plugins: [],
-          };`
+					`module.exports = { content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"], theme: { extend: {} }, plugins: [], };`
 				);
-
 				fs.writeFileSync(
 					"postcss.config.js",
-					`module.exports = {
-            plugins: { tailwindcss: {}, autoprefixer: {} },
-          };`
+					`module.exports = { plugins: { tailwindcss: {}, autoprefixer: {} }, };`
 				);
 
 				console.log(
