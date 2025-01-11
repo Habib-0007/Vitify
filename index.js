@@ -1,18 +1,16 @@
 #!/usr/bin/env node
 
-const {
-	execSync,
-} = require("child_process");
-const prompts = require("prompts");
-const chalk = require("chalk");
-const fs = require("fs");
-const path = require("path");
+import { execSync } from "child_process";
+import prompts from "prompts";
+import chalk from "chalk";
+import fs from "fs";
+import path from "path";
 
 (async () => {
 	try {
 		console.log(
 			chalk.bold.blue(
-				"\nWelcome to the Vite Scaffolding CLI!\n"
+				"\nWelcome to the Vitify CLI!\n"
 			)
 		);
 
@@ -172,26 +170,27 @@ const path = require("path");
 					"npm install -D tailwindcss postcss autoprefixer && npx tailwindcss init",
 					{ stdio: "inherit" }
 				);
+				
+				// Tailwind CSS getComputedStyle
+				fs.writeFileSync("src/index.css", "@tailwind base; \n @tailwind components; \n @tailwind utilities;")
+
 				// Tailwind configuration files
 				fs.writeFileSync(
 					"tailwind.config.js",
 					`module.exports = {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-};`
+            content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+            theme: { extend: {} },
+            plugins: [],
+          };`
 				);
+
 				fs.writeFileSync(
 					"postcss.config.js",
 					`module.exports = {
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
-  },
-};`
+            plugins: { tailwindcss: {}, autoprefixer: {} },
+          };`
 				);
+
 				console.log(
 					chalk.green(
 						"\nTailwindCSS configuration added."

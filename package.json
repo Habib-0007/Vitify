@@ -1,34 +1,37 @@
 {
-	"name": "vitify",
-	"version": "1.0.0",
-	"description": "CLI tool for scaffolding React-Vite projects with optional packages (TailwindCSS, Zustand, Lucide-react, GSAP/Framer Motion)",
-	"main": "index.js",
-	"bin": {
-		"vitify": "./index.js"
-	},
-	"keywords": [
-		"vite",
-		"react",
-		"cli",
-		"scaffold",
-		"tailwindcss",
-		"zustand",
-		"lucide-react",
-		"gsap",
-		"framer-motion"
-	],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/habib-0007/vitify.git"
-	},
-	"homepage": "https://github.com/habib-0007/vitify",
-	"author": "Habib Adebayo",
-	"license": "MIT",
-	"engines": {
-		"node": ">=14.0.0"
-	},
-	"dependencies": {
-		"chalk": "^5.4.1",
-		"prompts": "^2.4.2"
-	}
+  "name": "vitify",
+  "version": "1.2.0",
+  "type": "module",
+  "description": "CLI tool for scaffolding React-Vite projects with optional packages (TailwindCSS, Zustand, Lucide-react, GSAP/Framer Motion)",
+  "main": "index.js",
+  "bin": {
+    "vitify": "./index.js"
+  },
+  "keywords": [
+    "vite",
+    "react",
+    "cli",
+    "scaffold",
+    "tailwindcss",
+    "zustand",
+    "lucide-react",
+    "gsap",
+    "framer-motion",
+    "typescript",
+    "js-framework"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/habib-0007/vitify.git"
+  },
+  "homepage": "https://github.com/habib-0007/vitify",
+  "author": "Habib Adebayo",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "prompts": "^2.4.2"
+  }
 }

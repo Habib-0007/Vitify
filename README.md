@@ -29,4 +29,4 @@ npm i -g vitify
 2. Run the installer:
 ```
 vitify
-```# Vitify
+```
